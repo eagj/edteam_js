@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Trabajar con Strings</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Trabajar con Strings</h1>
+        <h2 class="text-success text-center my-5">Propiedades</h2>
+        <h2 class="text-center mb-5">.length</h2>
+        <p><code>.length</code> nos dice cuantos caracteres tiene ese texto:</p>
+        <code>
+            <pre class="alert alert-dark">
+                let a = 'JavaScript'
+                console.log(a.length)
+                <- 10
+            </pre>
+        </code>
+
+        <h2 class="text-success text-center my-5">Métodos sin parametros</h2>
+        <h2 class="text-center mb-5">.trim()</h2>
+        <p><code>.trim()</code> elimina los espacios en blanco en un string</p>
+        <code>
+            <pre class="alert alert-dark">
+                let a = '     JavaScript     '
+                console.log(a.trim())
+                <- "JavaScript"
+            </pre>
+        </code>
+
+        <h2 class="text-center m-5">.toUpperCase()</h2>
+        <p><code>.toUpperCase()</code> convierte todo el string a mayúsculas</p>
+        <code>
+            <pre class="alert alert-dark">
+                let a = 'javascript'
+                console.log(a.toUpperCase())
+                <- "JAVASCRIPT"
+            </pre>
+        </code>
+
+        <h2 class="text-center m-5">.toLowerCase()</h2>
+        <p><code>.toLowerCase()</code> convierte todo el string a minúsculas</p>
+        <code>
+            <pre class="alert alert-dark">
+                let a = 'JAVASCRIPT'
+                console.log(a.toLowerCase())
+                <- "javascript"
+            </pre>
+        </code>
+
+
+
+
+
+
+        <button onclick="numeroDeDecimales()" class="btn btn-danger">Probar codigo</button>
+
+
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>

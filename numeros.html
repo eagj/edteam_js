@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Métodos con números</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+
+        <h1>Métodos con números</h1>
+        <h2 class="text-center p-5">parseInt()</h2>
+        <p><code>parseInt()</code> convierte un texto a número:</p>
+        <code>
+            <pre class="alert alert-dark">
+                let a = '100'
+                console.log(a)
+                >"100"
+            </pre>
+        </code>
+
+        Si ponemos <code>parseInt(x,10)</code> lo convertimos a número. El <strong>10</strong> es para convertirlo
+        al
+        sistema
+        decimal:
+        <code>
+            <pre class="alert alert-dark">
+                let a = '100'
+                let textToNumber = parseInt(a,10)
+                console.log(textToNumber)
+                <- 100
+            </pre>
+        </code>
+
+
+        <h2 class="text-center p-5">parseFloat()</h2>
+        <p><code>parseFloat()</code> convierte un texto a números con decimales:</p>
+        <code>
+            <pre class="alert alert-dark">
+                let a = '100.12345678'
+                parseFloat(a)
+                <- 100.12345678
+            </pre>
+        </code>
+
+
+
+
+
+        <h2 class="text-center p-5">toFixed()</h2>
+
+        <p><strong>toFixed()</strong> Especifica el número de decimales
+            number.toFixed(n)</p>
+
+        <code>
+            <pre class="alert alert-dark">
+                let a = 100.98997799
+                a.toFixed(3)
+                <- 100.990
+            </pre>
+        </code>
+
+        <p>En el siguiente ejemplo podemos pedir mediante un prompt un numero y cuantos decimales queremos y nos lo
+            muestra en un alert:</p>
+        <code>
+            <pre class="alert alert-dark">
+                function numeroDeDecimales() {
+                    let a = prompt("Pon un numero con decimales (Pon un . y no un ,)")
+                    let aT = parseFloat(a) //prompt genera texto y así lo convertimos a número con decimales
+                    let b = prompt("Cuantos decimales quieres")
+                    let bT = parseFloat(b)
+                    let c = aT.toFixed(bT)
+                    alert(c)
+                }
+            </pre>
+        </code>
+        <button onclick="numeroDeDecimales()" class="btn btn-danger">Probar codigo</button>
+
+
+        <script>
+            function numeroDeDecimales() {
+                let a = prompt("Pon un numero con decimales (Pon un . y no un ,)")
+                let aT = parseFloat(a)
+                let b = prompt("Cuantos decimales quieres")
+                let bT = parseFloat(b)
+                let c = aT.toFixed(bT)
+                alert(c)
+            }
+        </script>
+
+        <h2 class="text-center p-5">Math.floor()</h2>
+
+        <p>Redondea un número con decimales hacia abajo.</p>
+
+        <code>
+            <pre class="alert alert-dark">
+                let a = 100.98997799
+                Math.floor(a)
+                <- 100
+            </pre>
+        </code>
+
+        <h2 class="text-center p-5">Math.ceil()</h2>
+
+        <p>Redondea un número con decimales hacia arriba.</p>
+
+        <code>
+            <pre class="alert alert-dark">
+                let a = 100.98997799
+                Math.ceil(a)
+                <- 101
+            </pre>
+        </code>
+
+        <h2 class="text-center p-5">Math.round()</h2>
+
+        <p>Redondea un número automáticamente.</p>
+
+        <code>
+            <pre class="alert alert-dark">
+                let a = 100.5
+                Math.round(a)
+                <- 101
+                let b = 100.4
+                Math.round(b)
+                <- 100
+            </pre>
+        </code>
+
+        <h2 class="text-center p-5">Math.random()</h2>
+
+        <p>Genera un número aleatorio entre 0 y 1</p>
+
+        <code>
+            <pre class="alert alert-dark">
+                Math.random()               
+                <- 0.9458360390800102
+                Math.random()               
+                <- 0.5685489367635572                
+            </pre>
+        </code>
+        <p>Para generar un número aleatorio entre 1 y 10:</p>
+        <code>
+            <pre class="alert alert-dark">
+                Math.random() *10              
+                <- 3.8326837201316133
+            </pre>
+        </code>
+        <p>Para que no genere decimales lo usamos con <code>Math.ceil()</code>:</p>
+        <code>
+            <pre class="alert alert-dark">
+                Math.ceil(Math.random() *10)
+                <- 3
+                Math.ceil(Math.random() *10)
+                <- 8
+            </pre>
+        </code>
+        <code>
+            <pre class="alert alert-dark">
+                function numeroAzar() {
+                    alert(Math.ceil(Math.random() * 10))
+                }        
+            </pre>
+        </code>
+        <button onclick="numeroAzar()" class="btn btn-danger">Probar numero al azar de 0 a 10</button>
+        <script>
+            function numeroAzar() {
+                alert(Math.ceil(Math.random() * 10))
+            }
+        </script>
+        <p></p>
+        <code>
+        <pre class="alert alert-dark">
+            function numeroAzarentre() {
+                let elige = prompt("Elige un número máximo")
+                alert(Math.ceil(Math.random() * elige))
+            }       
+        </pre>
+    </code>
+        <button onclick="numeroAzarentre()" class="btn btn-danger">Probar numero al azar con el máximo que se
+            quiera</button>
+        <script>
+            function numeroAzarentre() {
+                let elige = prompt("Elige un número máximo")
+                alert(Math.ceil(Math.random() * elige))
+            }
+        </script>
+
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
