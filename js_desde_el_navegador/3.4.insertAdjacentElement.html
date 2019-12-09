@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>insertAdjacentElement</title>
+    <style>
+        section::before {
+            content: "SECCIÓN";
+            text-align: center;
+            display: inline-block;
+            width: 100%;
+            font-weight: 800;
+        }
+
+        section {
+            border: 1px solid green;
+            background: lightblue;
+            border-radius: 8px;
+            padding: .5em;
+            border-bottom: 5px solid #000;
+            max-width: 1000px;
+            margin: .5em auto;
+
+        }
+
+        div {
+            border: 1px solid #333;
+            background-color: #fff;
+            padding: 1em;
+            text-align: center;
+            margin: .5em
+        }
+
+        .padre {
+            border: 2px solid red;
+            position: relative;
+        }
+
+        .padre::before {
+            content: "div padre";
+            font-size: .6em;
+            position: absolute;
+            top: -.8em;
+            background-color: #fff;
+            padding: .1em;
+            border: 1px solid red;
+        }
+
+        .hijo {
+            border: 2px solid green;
+            position: relative;
+        }
+
+        .hijo::before {
+            content: "div hijo";
+            font-size: .6em;
+            position: absolute;
+            top: -.8em;
+            background-color: #fff;
+            padding: .1em;
+            border: 1px solid green;
+
+        }
+    </style>
+</head>
+
+<body>
+    <p style="text-align:center;background-color:yellow;margin:0;padding:1em;"><strong> Todas las cajas son un section
+            (color azul) que contienen un div padre
+            (borde rojo), con un div hijo interior (border green). Las cajas beforebegin, afterbegin, afterend y
+            beforeend
+            se general por JS.</strong></p>
+    <section>
+        <div id="principal1" class="padre">
+            <div class="hijo">
+                <p><strong>Texto en el html para beforebegin</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div id="principal2" class="padre">
+            <div class="hijo">
+                <p><strong>Texto en el html para afterbegin</strong></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="principal3" class="padre">
+            <div class="hijo">
+                <p><strong>Texto en el html para afterend</strong></p>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div id="principal4" class="padre">
+            <div class="hijo">
+                <p><strong>Texto en el html para beforeend</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        let example1 = document.getElementById('principal1')
+        let example2 = document.getElementById('principal2')
+        let example3 = document.getElementById('principal3')
+        let example4 = document.getElementById('principal4')
+
+        let example1Type = document.createElement('div')
+        let example2Type = document.createElement('div')
+        let example3Type = document.createElement('div')
+        let example4Type = document.createElement('div')
+
+        example1Type.textContent = 'beforebegin'
+        example2Type.textContent = 'afterbegin'
+        example3Type.textContent = 'afterend'
+        example4Type.textContent = 'beforeend'
+
+        example1.insertAdjacentElement('beforebegin', example1Type)
+        example2.insertAdjacentElement('afterbegin', example2Type)
+        example3.insertAdjacentElement('afterend', example3Type)
+        example4.insertAdjacentElement('beforeend', example4Type)
+    </script>
+</body>
+
+</html>
